@@ -1,6 +1,7 @@
 package com.dwsp.customer.server.service;
 
-import com.dwsp.customer.server.dto.TestDto;
+import com.dwsp.customer.api.dto.TestDto;
+import com.dwsp.customer.api.service.ITestService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 

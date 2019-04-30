@@ -1,4 +1,4 @@
-package com.dwsp.customer.server.dto;
+package com.dwsp.customer.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

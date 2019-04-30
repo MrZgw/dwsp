@@ -14,12 +14,6 @@
 
     <dependencies>
 
-        <!--<dependency>-->
-        <!--<groupId>com.water</groupId>-->
-        <!--<artifactId>dwsp-common</artifactId>-->
-        <!--<version>${dwsp.version}</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>com.water</groupId>
             <artifactId>dwsp-customer-api</artifactId>

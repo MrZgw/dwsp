@@ -1,6 +1,7 @@
 package com.dwsp.customer.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.dwsp.customer.enums.StuSexEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -25,7 +26,7 @@ public class CustomerStu extends BaseEntity {
 
     private Integer stuAge;
 
-    private Boolean stuSex;
+    private StuSexEnum stuSex;
 
     private String stuCellPhone;
 

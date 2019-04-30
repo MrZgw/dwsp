@@ -1,7 +1,7 @@
-package com.dwsp.customer.server.service;
+package com.dwsp.customer.api.service;
 
 
-import com.dwsp.customer.server.dto.TestDto;
+import com.dwsp.customer.api.dto.TestDto;
 
 /**
  * @ClassName ITestService

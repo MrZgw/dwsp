@@ -1,7 +1,7 @@
 package com.dwsp.customer.web.controller;
 
-import com.dwsp.customer.server.dto.TestDto;
-import com.dwsp.customer.server.service.ITestService;
+import com.dwsp.customer.api.dto.TestDto;
+import com.dwsp.customer.api.service.ITestService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
