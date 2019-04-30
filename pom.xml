@@ -92,6 +92,7 @@
                 <version>${mybatis-plus.vesion}</version>
                 <scope>test</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

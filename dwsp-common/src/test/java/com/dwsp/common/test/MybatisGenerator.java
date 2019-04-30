@@ -1,4 +1,4 @@
-package com.dwsp;
+package com.dwsp.common.test;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
