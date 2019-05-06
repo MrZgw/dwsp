@@ -1,8 +1,8 @@
 package com.dwsp.rabbit.mq.config;
 
-import com.dwsp.rabbit.mq.enums.ExchangeConstant;
-import com.dwsp.rabbit.mq.enums.QueueConstant;
-import com.dwsp.rabbit.mq.enums.RouteKeyConstant;
+import com.dwsp.rabbit.mq.constant.ExchangeConstant;
+import com.dwsp.rabbit.mq.constant.QueueConstant;
+import com.dwsp.rabbit.mq.constant.RouteKeyConstant;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,17 +18,17 @@ public class RabbitMqConfig {
 
     @Bean
     public Queue customerQueue() {
-        return new Queue(QueueConstant.CUSTOMER_QUEUE.getValue());
+        return new Queue(QueueConstant.CUSTOMER_QUEUE);
     }
 
     @Bean
     public Exchange commonExchange() {
-        return new TopicExchange(ExchangeConstant.COMMON_EXCHANGE.getValue());
+        return new TopicExchange(ExchangeConstant.COMMON_EXCHANGE);
     }
 
     @Bean
     public Binding bindingExchange(TopicExchange commonExchange, Queue customerQueue) {
-        return BindingBuilder.bind(customerQueue).to(commonExchange).with(RouteKeyConstant.CUSTOMER_KEY.getValue());
+        return BindingBuilder.bind(customerQueue).to(commonExchange).with(RouteKeyConstant.CUSTOMER_KEY);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.dwsp.rabbit.mq.consumer;
 
-import com.dwsp.rabbit.mq.enums.QueueConstant;
+import com.dwsp.rabbit.mq.constant.QueueConstant;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -9,7 +9,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.zip.CheckedInputStream;
 
 /**
  * @InterfaceName IRabbitMqConsumerService
@@ -21,7 +20,7 @@ import java.util.zip.CheckedInputStream;
 @Component
 public class RabbitMqCustomerConsumer {
 
-    @RabbitListener(queues = {"customer.queue"})
+    @RabbitListener(queues = {QueueConstant.CUSTOMER_QUEUE})
     @RabbitHandler
     public void process(Message message, Channel channel, String content) {
         log.info("consumer receive message [{}]", content);

@@ -1,6 +1,5 @@
 package com.dwsp.rabbit.mq.sender.service;
 
-import com.dwsp.rabbit.mq.enums.ExchangeConstant;
 import com.dwsp.rabbit.mq.sender.IRabbitMqSendService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
