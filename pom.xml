@@ -11,6 +11,7 @@
         <module>dwsp-customer-api</module>
         <module>dwsp-customer-service</module>
         <module>dwsp-customer-web</module>
+        <module>dwsp-mq</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -106,6 +107,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 
