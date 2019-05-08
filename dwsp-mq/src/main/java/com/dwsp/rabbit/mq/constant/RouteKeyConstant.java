@@ -11,6 +11,12 @@ public interface RouteKeyConstant {
     /**
      * customer路由key
      */
-    String CUSTOMER_KEY = "customer.#";
+    String CUSTOMER_ROUTE_KEY = "customer.#";
+
+
+    /**
+     * TTL队列路由键
+     */
+    String DELAY_KEY = "customer.delay.#";
 
 }

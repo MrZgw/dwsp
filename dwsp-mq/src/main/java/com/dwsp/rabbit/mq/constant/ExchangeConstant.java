@@ -13,5 +13,10 @@ public interface ExchangeConstant {
      */
     String COMMON_EXCHANGE = "common.exchange";
 
+    /**
+     * TTL交换机
+     */
+    String DELAY_EXCHANGE = "delay.exchange";
+
 
 }

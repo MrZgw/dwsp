@@ -11,4 +11,9 @@ public interface QueueConstant {
      * customer消费队列
      */
     String CUSTOMER_QUEUE = "customer.queue";
+
+    /**
+     * 延迟队列
+     */
+    String DELAY_QUEUE = "delay.queue";
 }
