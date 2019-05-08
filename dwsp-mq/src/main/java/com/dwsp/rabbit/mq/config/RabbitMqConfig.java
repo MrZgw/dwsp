@@ -22,7 +22,7 @@ public class RabbitMqConfig {
     }
 
     @Bean
-    public Exchange commonExchange() {
+    public TopicExchange commonExchange() {
         return new TopicExchange(ExchangeConstant.COMMON_EXCHANGE);
     }
 

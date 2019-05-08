@@ -1,5 +1,6 @@
-package com.dwsp.rabbit.mq.consumer;
+package com.dwsp.customer.web.controller;
 
+import com.dwsp.customer.api.dto.CustomerStuDto;
 import com.dwsp.rabbit.mq.constant.QueueConstant;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -22,8 +23,8 @@ public class RabbitMqCustomerConsumer {
 
     @RabbitListener(queues = {QueueConstant.CUSTOMER_QUEUE})
     @RabbitHandler
-    public void process(Message message, Channel channel, String content) {
-        log.info("consumer receive message [{}]", content);
+    public void process(Message message, Channel channel, CustomerStuDto customerStuDto) {
+        log.info("consumer receive message [{}]", customerStuDto.toString());
         try {
             channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
         } catch (IOException e) {

@@ -1,5 +1,6 @@
 package com.dwsp.rabbit.mq.sender;
 
+import lombok.NonNull;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 /**
@@ -10,6 +11,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
  **/
 public interface IRabbitMqSendService extends RabbitTemplate.ConfirmCallback {
 
-    void sendMessage(String exchangeName, String routeKey, Object message);
+    void sendMessage(@NonNull String exchangeName, @NonNull String routeKey, @NonNull Object message);
 
 }
