@@ -1,21 +1,22 @@
 package com.dwsp.customer.test;
 
+
+import com.dwsp.constant.TestValueConstant;
 import com.dwsp.customer.api.dto.CustomerStuDto;
-import com.dwsp.customer.entity.CustomerStu;
 import com.dwsp.customer.server.DwspCustomerServiceApplication;
 import com.dwsp.rabbit.mq.constant.ExchangeConstant;
 import com.dwsp.rabbit.mq.constant.RouteKeyConstant;
 import com.dwsp.rabbit.mq.sender.IRabbitMqSendService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * @ClassName RabbitMqTest
@@ -25,10 +26,19 @@ import java.util.concurrent.CountDownLatch;
  **/
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = DwspCustomerServiceApplication.class)
+@Slf4j
 public class RabbitMqTest {
 
     @Autowired
     private IRabbitMqSendService rabbitMqSendService;
+
+    @Value(TestValueConstant.TEST_VALUE)
+    private String testValue;
+
+    @Test
+    public void testValue() {
+        log.info("test value is {}", testValue);
+    }
 
     @Test
     public void sendMessage() {

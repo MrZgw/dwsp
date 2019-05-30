@@ -12,6 +12,8 @@
         <module>dwsp-customer-service</module>
         <module>dwsp-customer-web</module>
         <module>dwsp-mq</module>
+        <module>dwsp-lock</module>
+        <module>dwsp-schedule</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -27,6 +29,9 @@
         <spring-boot-dubbo.version>2.7.1</spring-boot-dubbo.version>
         <curator.version>2.12.0</curator.version>
         <fastjson.version>1.2.47</fastjson.version>
+        <maven-compile-plugin.version>3.8.0</maven-compile-plugin.version>
+        <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -134,6 +139,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compile-plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -144,6 +150,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <skip>true</skip>
@@ -153,6 +160,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
             </plugin>
 
         </plugins>
