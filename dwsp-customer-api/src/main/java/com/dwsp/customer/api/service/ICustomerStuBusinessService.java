@@ -14,5 +14,5 @@ public interface ICustomerStuBusinessService {
 
     Boolean saveCustomerStu(CustomerStuDto customerStu);
 
-    List<CustomerStuDto> queryCustomerStu();
+    List<CustomerStuDto> getCustomerStu();
 }

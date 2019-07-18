@@ -10,7 +10,7 @@
         <module>dwsp-common</module>
         <module>dwsp-customer-api</module>
         <module>dwsp-customer-service</module>
-        <module>dwsp-customer-web</module>
+        <module>dwsp-gateway</module>
         <module>dwsp-mq</module>
         <module>dwsp-lock</module>
         <module>dwsp-schedule</module>

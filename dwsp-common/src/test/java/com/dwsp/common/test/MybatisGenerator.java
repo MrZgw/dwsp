@@ -126,7 +126,7 @@ public class MybatisGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.dwsp.customer.entity.BaseEntity");
+        strategy.setSuperEntityClass("com.dwsp.common.entity.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         strategy.setSuperControllerClass("com.dwsp.common.BaseController");

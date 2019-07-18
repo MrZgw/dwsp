@@ -1,23 +1,15 @@
 package com.dwsp.customer.test;
 
-import com.dwsp.customer.entity.CustomerStu;
-import com.dwsp.customer.enums.StuSexEnum;
-import com.dwsp.customer.server.DwspCustomerServiceApplication;
+import com.dwsp.customer.DwspCustomerServiceApplication;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.RandomUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 
 /**
