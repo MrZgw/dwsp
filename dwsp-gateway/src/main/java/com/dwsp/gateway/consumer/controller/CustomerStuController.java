@@ -3,6 +3,7 @@ package com.dwsp.gateway.consumer.controller;
 import com.dwsp.customer.api.dto.CustomerStuDto;
 import com.dwsp.customer.api.service.ICustomerStuBusinessService;
 import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,11 @@ import java.util.List;
 @RequestMapping("/customer/stu")
 public class CustomerStuController {
 
-    @Reference()
+    @Reference
     private ICustomerStuBusinessService customerStuBusinessService;
+
+    @Value("${test.value}")
+    private String testValue;
 
     @GetMapping("/list")
     public List<CustomerStuDto> query() {
@@ -35,5 +39,10 @@ public class CustomerStuController {
         customerStu.setStuAge(30);
         customerStu.setStuCellPhone("10086");
         return customerStuBusinessService.saveCustomerStu(customerStu);
+    }
+
+    @GetMapping("/testValue")
+    public String testValue() {
+        return testValue;
     }
 }

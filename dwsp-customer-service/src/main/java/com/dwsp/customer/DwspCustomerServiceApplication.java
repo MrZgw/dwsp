@@ -3,12 +3,7 @@ package com.dwsp.customer;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.ApplicationContextInitializer;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
@@ -21,6 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = "com.dwsp")
 @EnableTransactionManagement
 @MapperScan("com.dwsp.customer.mapper")
+//@NacosPropertySource(dataId = "dwsp-consumer-service", autoRefreshed = true)
 public class DwspCustomerServiceApplication {
 
     public static void main(String[] args) {

@@ -1,6 +1,8 @@
 package com.dwsp.customer.business.service;
 
 
+import com.dwsp.common.constant.RedisKeyConstant;
+import com.dwsp.common.utils.RedisUtil;
 import com.dwsp.customer.api.dto.CustomerStuDto;
 import com.dwsp.customer.api.service.ICustomerStuBusinessService;
 import com.dwsp.customer.dao.CustomerStuService;
@@ -27,6 +29,9 @@ public class CustomerStuBusinessServiceImpl implements ICustomerStuBusinessServi
     @Autowired
     private CustomerStuService customerStuService;
 
+    @Autowired
+    private RedisUtil redisUtil;
+
     @Override
     public Boolean saveCustomerStu(CustomerStuDto dto) {
 
@@ -34,17 +39,26 @@ public class CustomerStuBusinessServiceImpl implements ICustomerStuBusinessServi
         BeanUtils.copyProperties(dto, customerStu);
         customerStu.setStuSex(StuSexEnum.valueOf(dto.getStuSex()));
         log.info("customerStu is [{}]", customerStu.toString());
-        return customerStuService.save(customerStu);
+        Boolean result = customerStuService.save(customerStu);
+        if (result) {
+            redisUtil.setListLeft(RedisKeyConstant.customerKey, dto);
+        }
+        return result;
     }
 
     @Override
     public List<CustomerStuDto> getCustomerStu() {
 
+        List<CustomerStuDto> cacheList = redisUtil.getListRightAll(RedisKeyConstant.customerKey);
+        if (cacheList != null && cacheList.size() > 0) {
+            return cacheList;
+        }
         List<CustomerStuDto> resultList = new LinkedList<>();
         List<CustomerStu> customerStuList = customerStuService.list();
         customerStuList.forEach(customerStu -> {
             CustomerStuDto customerStuDto = new CustomerStuDto();
             BeanUtils.copyProperties(customerStu, customerStuDto);
+            customerStuDto.setStuSex(customerStu.getStuSex().getDesc());
             resultList.add(customerStuDto);
         });
         return resultList;

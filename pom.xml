@@ -32,6 +32,10 @@
         <maven-compile-plugin.version>3.8.0</maven-compile-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <nacos-starter.version>0.2.1</nacos-starter.version>
+        <apollo.version>1.4.0</apollo.version>
+        <dubbo-registry-nacos.version>2.7.1</dubbo-registry-nacos.version>
+        <nacos-client.version>0.9.0</nacos-client.version>
     </properties>
 
     <dependencyManagement>
@@ -107,6 +111,42 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter -->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>${nacos-starter.version}</version>
+            </dependency>
+
+            <!-- apollo 携程apollo配置中心框架 -->
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-core</artifactId>
+                <version>${apollo.version}</version>
+            </dependency>
+            <!-- apollo -->
+
+            <!-- Dubbo Nacos registry dependency -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo-registry-nacos.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-client -->
+            <!-- 这个地方必须版本0.9.0是可行的,但是1.0.0有问题 -->
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -115,11 +155,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>

@@ -15,6 +15,11 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.water</groupId>
             <artifactId>dwsp-common</artifactId>
             <version>${dwsp.version}</version>
@@ -59,6 +64,26 @@
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+        </dependency>
+
+         <dependency>
+             <groupId>com.alibaba.nacos</groupId>
+             <artifactId>nacos-client</artifactId>
+         </dependency>
+
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
         </dependency>
     </dependencies>
 
