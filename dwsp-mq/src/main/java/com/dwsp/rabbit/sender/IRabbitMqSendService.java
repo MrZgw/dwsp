@@ -1,4 +1,4 @@
-package com.dwsp.rabbit.mq.sender;
+package com.dwsp.rabbit.sender;
 
 import lombok.NonNull;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

@@ -1,6 +1,6 @@
-package com.dwsp.rabbit.mq.config;
+package com.dwsp.rabbit.config;
 
-import com.dwsp.rabbit.mq.constant.RouteKeyConstant;
+import com.dwsp.rabbit.constant.RouteKeyConstant;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

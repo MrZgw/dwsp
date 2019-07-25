@@ -1,6 +1,6 @@
-package com.dwsp.rabbit.mq.config;
+package com.dwsp.rabbit.config;
 
-import com.dwsp.rabbit.mq.constant.ExchangeConstant;
+import com.dwsp.rabbit.constant.ExchangeConstant;
 import org.springframework.amqp.core.ExchangeBuilder;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.context.annotation.Bean;

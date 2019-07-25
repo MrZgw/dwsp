@@ -1,4 +1,4 @@
-package com.dwsp.rabbit.mq.constant;
+package com.dwsp.rabbit.constant;
 
 /**
  * @ClassName ExchangeConstant

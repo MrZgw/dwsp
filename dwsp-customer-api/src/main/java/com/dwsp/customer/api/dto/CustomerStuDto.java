@@ -1,6 +1,8 @@
 package com.dwsp.customer.api.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -11,6 +13,8 @@ import java.io.Serializable;
  * @Date 2019/4/30 14:35
  **/
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CustomerStuDto implements Serializable {
 
     private Long id;

@@ -1,8 +1,7 @@
-package com.dwsp.rabbit.mq.config;
+package com.dwsp.rabbit.config;
 
-import com.dwsp.rabbit.mq.constant.ExchangeConstant;
-import com.dwsp.rabbit.mq.constant.QueueConstant;
-import com.dwsp.rabbit.mq.constant.RouteKeyConstant;
+import com.dwsp.rabbit.constant.ExchangeConstant;
+import com.dwsp.rabbit.constant.QueueConstant;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.context.annotation.Bean;
