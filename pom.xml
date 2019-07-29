@@ -15,6 +15,7 @@
         <module>dwsp-mq</module>
         <module>dwsp-lock</module>
         <module>dwsp-schedule</module>
+        <module>dwsp-webflux</module>
     </modules>
 
     <packaging>pom</packaging>
