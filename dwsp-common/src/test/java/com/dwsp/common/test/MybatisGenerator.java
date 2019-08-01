@@ -59,7 +59,7 @@ public class MybatisGenerator {
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:mysql://47.107.32.73:3306/dwps?useUnicode=true&characterEncoding=UTF8&useSSL=false");
         // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
+        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123456");
         mpg.setDataSource(dsc);
@@ -67,7 +67,7 @@ public class MybatisGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.dwsp");
+        pc.setParent("com.dwsp.customer.entity");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -93,7 +93,7 @@ public class MybatisGenerator {
 //                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
 //                        + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
 
-                return "D://workspace-git//dwsp//src//main//resources//dwsp//mapper//" + pc.getModuleName()
+                return "D://workspace-git//dwsp//src//main//resources//mapper//" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });

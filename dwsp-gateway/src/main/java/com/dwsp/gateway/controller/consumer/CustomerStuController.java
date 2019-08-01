@@ -1,4 +1,4 @@
-package com.dwsp.gateway.consumer.controller;
+package com.dwsp.gateway.controller.consumer;
 
 import com.dwsp.customer.api.dto.CustomerStuDto;
 import com.dwsp.customer.api.service.ICustomerStuBusinessService;

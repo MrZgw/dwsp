@@ -1,4 +1,4 @@
-package com.dwsp.gateway.consumer.controller;
+package com.dwsp.gateway.controller.consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
