@@ -1,8 +1,8 @@
 package com.dwsp.common.utils;
 
-import com.sun.istack.internal.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class RedisUtil {
      * @param key
      * @param value
      */
-    public void setString(@NotNull String key, @NotNull String value) {
+    public void setString(@NonNull String key, @NonNull String value) {
         redisTemplate.opsForValue().set(key, value);
     }
 
@@ -35,7 +35,7 @@ public class RedisUtil {
      *
      * @param key
      */
-    public void getString(@NotNull String key) {
+    public void getString(@NonNull String key) {
         redisTemplate.opsForValue().get(key);
     }
 
@@ -45,7 +45,7 @@ public class RedisUtil {
      * @param key
      * @param obj
      */
-    public void setListLeft(@NotNull String key, Object obj) {
+    public void setListLeft(@NonNull String key, Object obj) {
         if (obj != null) {
             redisTemplate.opsForList().leftPush(key, obj);
         }
@@ -57,7 +57,7 @@ public class RedisUtil {
      * @param key
      * @param list
      */
-    public void setListLeftAll(@NotNull String key, List list) {
+    public void setListLeftAll(@NonNull String key, List list) {
         if (list != null && list.size() > 0) {
             redisTemplate.opsForList().leftPushAll(key, list);
         }
@@ -69,7 +69,7 @@ public class RedisUtil {
      * @param key
      * @return
      */
-    public List getListRightAll(@NotNull String key) {
+    public List getListRightAll(@NonNull String key) {
         return (List) redisTemplate.opsForList().range(key, 0, -1);
     }
 
@@ -79,7 +79,7 @@ public class RedisUtil {
      * @param key
      * @param map
      */
-    public void setHash(@NotNull String key, Map map) {
+    public void setHash(@NonNull String key, Map map) {
         if (map != null && !map.isEmpty()) {
             redisTemplate.opsForHash().putAll(key, map);
         }
@@ -91,7 +91,7 @@ public class RedisUtil {
      * @param key
      * @return
      */
-    public Map getHash(@NotNull String key) {
+    public Map getHash(@NonNull String key) {
         return redisTemplate.opsForHash().entries(key);
     }
 

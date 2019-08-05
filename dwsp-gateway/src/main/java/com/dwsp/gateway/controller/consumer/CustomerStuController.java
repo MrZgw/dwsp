@@ -34,10 +34,10 @@ public class CustomerStuController {
     @GetMapping("/save")
     public Boolean save() {
         CustomerStuDto customerStu = new CustomerStuDto();
-        customerStu.setStuName("张三");
+        customerStu.setStuName("王五");
         customerStu.setStuSex("MAN");
-        customerStu.setStuAge(30);
-        customerStu.setStuCellPhone("10086");
+        customerStu.setStuAge(20);
+        customerStu.setStuCellPhone("88888");
         return customerStuBusinessService.saveCustomerStu(customerStu);
     }
 

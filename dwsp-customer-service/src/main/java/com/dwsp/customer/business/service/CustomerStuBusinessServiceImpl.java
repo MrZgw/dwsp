@@ -8,6 +8,7 @@ import com.dwsp.customer.api.service.ICustomerStuBusinessService;
 import com.dwsp.customer.dao.CustomerStuService;
 import com.dwsp.customer.entity.CustomerStu;
 import com.dwsp.customer.enums.StuSexEnum;
+import com.dwsp.customer.es.repository.CustomerStuRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.BeanUtils;
@@ -30,6 +31,9 @@ public class CustomerStuBusinessServiceImpl implements ICustomerStuBusinessServi
     private CustomerStuService customerStuService;
 
     @Autowired
+    private CustomerStuRepository customerStuRepository;
+
+    @Autowired
     private RedisUtil redisUtil;
 
     @Override
@@ -41,7 +45,10 @@ public class CustomerStuBusinessServiceImpl implements ICustomerStuBusinessServi
         log.info("customerStu is [{}]", customerStu.toString());
         Boolean result = customerStuService.save(customerStu);
         if (result) {
+            //存入缓存
             redisUtil.setListLeft(RedisKeyConstant.customerKey, dto);
+            //存入es中
+            customerStuRepository.save(customerStu);
         }
         return result;
     }
@@ -49,11 +56,21 @@ public class CustomerStuBusinessServiceImpl implements ICustomerStuBusinessServi
     @Override
     public List<CustomerStuDto> getCustomerStu() {
 
+        List<CustomerStuDto> resultList = new LinkedList<>();
+//        customerStuRepository.findAll().forEach(
+//                customerStu -> {
+//                    CustomerStuDto customerStuDto = new CustomerStuDto();
+//                    BeanUtils.copyProperties(customerStu, customerStuDto);
+//                    customerStuDto.setStuSex(customerStu.getStuSex().getDesc());
+//                    resultList.add(customerStuDto);
+//                }
+//        );
+
         List<CustomerStuDto> cacheList = redisUtil.getListRightAll(RedisKeyConstant.customerKey);
         if (cacheList != null && cacheList.size() > 0) {
             return cacheList;
         }
-        List<CustomerStuDto> resultList = new LinkedList<>();
+
         List<CustomerStu> customerStuList = customerStuService.list();
         customerStuList.forEach(customerStu -> {
             CustomerStuDto customerStuDto = new CustomerStuDto();

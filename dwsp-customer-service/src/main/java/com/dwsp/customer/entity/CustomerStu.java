@@ -6,6 +6,7 @@ import com.dwsp.customer.enums.StuSexEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * <p>
@@ -19,6 +20,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("t_customer_stu")
+@Document(indexName = "customer_stu", type = "doc")
 public class CustomerStu extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
