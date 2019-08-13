@@ -5,18 +5,23 @@
     <parent>
         <artifactId>dwsp</artifactId>
         <groupId>com.water</groupId>
-        <version>${dwsp.version}</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dwsp-gateway</artifactId>
+    <artifactId>dwsp-order-service</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.water</groupId>
-            <artifactId>dwsp-customer-api</artifactId>
+            <artifactId>dwsp-common</artifactId>
             <version>${dwsp.version}</version>
         </dependency>
 
@@ -26,26 +31,14 @@
             <version>${dwsp.version}</version>
         </dependency>
 
-        <!--
-                <dependency>
-                    <groupId>com.water</groupId>
-                    <artifactId>dwsp-mq</artifactId>
-                    <version>${dwsp.version}</version>
-                </dependency>
-
-                    <dependency>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-webflux</artifactId>
-                    </dependency>-->
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-actuator</artifactId>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
         </dependency>
 
         <dependency>
@@ -78,6 +71,26 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
         </dependency>
@@ -87,20 +100,18 @@
             <artifactId>dubbo-registry-nacos</artifactId>
         </dependency>
 
+        <!-- sharding-jdbc for spring boot -->
         <dependency>
-            <groupId>com.ctrip.framework.apollo</groupId>
-            <artifactId>apollo-client</artifactId>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
         </dependency>
 
+        <!-- sharding-jdbc for spring namespace -->
         <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-namespace</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-        </dependency>
     </dependencies>
 
     <build>

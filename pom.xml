@@ -16,6 +16,8 @@
         <module>dwsp-lock</module>
         <module>dwsp-schedule</module>
         <module>dwsp-webflux</module>
+        <module>dwsp-order-service</module>
+        <module>dwsp-order-api</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -40,6 +42,7 @@
         <nacos-client.version>0.9.0</nacos-client.version>
         <jwt.version>3.8.0</jwt.version>
         <shiro-spring.version>1.4.0</shiro-spring.version>
+        <sharding-sphere.version>4.0.0-RC1</sharding-sphere.version>
     </properties>
 
     <dependencyManagement>
@@ -163,6 +166,20 @@
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-spring</artifactId>
                 <version>${shiro-spring.version}</version>
+            </dependency>
+
+            <!-- sharding-jdbc for spring boot -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding-sphere.version}</version>
+            </dependency>
+
+            <!-- sharding-jdbc for spring namespace -->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-namespace</artifactId>
+                <version>${sharding-sphere.version}</version>
             </dependency>
 
         </dependencies>

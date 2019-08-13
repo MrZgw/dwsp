@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = "com.dwsp")
 @EnableTransactionManagement
 @MapperScan("com.dwsp.customer.mapper")
-//@NacosPropertySource(dataId = "dwsp-consumer-service", autoRefreshed = true)
+//@NacosPropertySource(dataId = "dwsp-consumer-dao", autoRefreshed = true)
 public class DwspCustomerServiceApplication {
 
     public static void main(String[] args) {

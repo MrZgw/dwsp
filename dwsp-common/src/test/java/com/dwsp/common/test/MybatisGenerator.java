@@ -49,15 +49,17 @@ public class MybatisGenerator {
         GlobalConfig gc = new GlobalConfig();
 //        String projectPath = System.getProperty("user.dir");
 //        gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setOutputDir("D://workspace-git//dwsp//src//main//java");
+        gc.setOutputDir("D:\\idea\\workspace\\dwsp\\dwsp-order-dao\\src\\main\\java");
         gc.setAuthor("zhanguowei");
         gc.setOpen(false);
+        gc.setServiceName("%sDao");
+        gc.setServiceImplName(gc.getServiceName() + "Impl");
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.107.32.73:3306/dwps?useUnicode=true&characterEncoding=UTF8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://47.107.32.73:3306/shard_db_1?useUnicode=true&characterEncoding=UTF8&useSSL=false");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
@@ -67,7 +69,7 @@ public class MybatisGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.dwsp.customer.entity");
+        pc.setParent("com.dwsp.order");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -93,7 +95,7 @@ public class MybatisGenerator {
 //                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
 //                        + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
 
-                return "D://workspace-git//dwsp//src//main//resources//mapper//" + pc.getModuleName()
+                return "D://idea//workspace//dwsp//dwsp-order-dao//src//main//resources//mapper//" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -131,9 +133,10 @@ public class MybatisGenerator {
         strategy.setRestControllerStyle(true);
         strategy.setSuperControllerClass("com.dwsp.common.BaseController");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
-        strategy.setSuperEntityColumns("id","create_time","modified_time");
+        strategy.setSuperEntityColumns("id", "create_time", "modified_time");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix("t_");
+        strategy.setEntityColumnConstant(true);
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
